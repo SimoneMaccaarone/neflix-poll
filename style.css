@@ -7,6 +7,8 @@ body {
 }
 
 h1 {
+    display: flex;
+    justify-content: center;
     color: red;
     font-size: 100px;
     text-align: center;
@@ -15,8 +17,12 @@ h1 {
 }
 
 .serie-title {
+    /* text-align: center; */
     font-weight: bold;
     font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }
 
 .class-collectioUl {
@@ -26,12 +32,14 @@ h1 {
 }
 
 .serie-li {
+    
     border: solid 1px;
     border-radius: 3px;
 
     display: flex;
     flex-direction: column;
     align-self: center;
+    justify-content: center;
 
     width: 300px;
     padding: 20px;

@@ -78,9 +78,7 @@ function displaySeries() {               //è globale, quindi la vede
 function createIMGOfSerie(serie){
     const imgTagIMG = document.createElement('img');
     imgTagIMG.classList.add('serie-img');
-
-    const imgTagIMGNode = document.createTextNode('src', serie.imageURL);
-    imgTagIMG.appendChild(imgTagIMGNode);
+    imgTagIMG.src= serie.imageURL;
 
     return imgTagIMG;
 }
