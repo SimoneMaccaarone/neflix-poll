@@ -1,4 +1,22 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One&display=swap');
+
+body {
     background-color: #141414;
     color: #fff;
 }
+
+h1 {
+    color: red;
+    font-size: 75px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.serie-title{
+    font-size: 30px;
+}
+
+/* .serie-li{
+
+
+} */
