@@ -5,20 +5,22 @@ body {
     color: #fff;
     display: flex;
     justify-content: center;
+    align-items: center;
+    align-content: end;
 }
 
-.netflixsvg {
+/* .netflixsvg {
     width: 50vw;
     padding: 50px;
-}
+} */
 
-h1 {
+.collection-name-class{
     display: flex;
     justify-content: center;
     color: red;
     /* width: 100vw; */
     /* height: 100vh; */
-    font-size: 335px;
+    font-size: 150px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
     /* font-family: 'Bebas Neue',sans-serif; */
@@ -39,8 +41,8 @@ h1 {
 .btn-byDownVote {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
+    justify-content: center;
 
     border-radius: 7px;
     width: 75px;
@@ -54,7 +56,7 @@ h1 {
 
 }
 
-.btn-reset-filter{
+.btn-reset-filter {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,17 +95,17 @@ h1 {
     width: 500px;
     padding: 20px;
     margin: 10px;
-    overflow: hidden;
+    overflow: auto;
 
 }
 
 .serie-img {
     border-radius: 3px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .serie-title {
-    /* text-align: center; */
+    text-align: center;
     font-weight: bold;
     font-size: 30px;
     margin-top: 15px;
@@ -122,6 +124,73 @@ h1 {
 
 }
 
+
+@media screen and (max-width: 320px) {
+    .collection-name-class{
+        width: 25vw;
+    }
+    .div-order-btn{
+        width: 25vw;
+    }
+
+    .class-collectioUl{
+        width: 50vw;
+    }
+
+    .serie-li{
+        width: 50vw;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .collection-name-class{
+        width: 50vw;
+    }
+    .div-order-btn{
+        width: 50vw;
+    }
+
+    .class-collectioUl{
+        width: 50vw;
+    }
+
+    .serie-li{
+        width: 50vw;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .collection-name-cla5{
+        width: 75vw;
+    }
+    .div-order-btn{
+        width: 75vw;
+    }
+
+    .class-collectioUl{
+        width: 75vw;
+    }
+
+    .serie-li{
+        width: 75vw;
+    }
+}
+@media screen and (min-width: 1920px) and (max-width: 1080px) {
+    .collection-name-cla5{
+        width: 100vw;
+    }
+    .div-order-btn{
+        width: 100vw;
+    }
+
+    .class-collectioUl{
+        width: 100vw;
+    }
+
+    .serie-li{
+        width: 100vw;
+    }
+}
 
 /* 320px — 480px: Mobile devices
 481px — 768px: iPads, Tablets
