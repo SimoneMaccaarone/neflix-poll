@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One&family=Oswald:wght@700&family=Poppins:wght@700&family=Roboto:wght@700;900&display=swap');
+
 
 body {
     background-color: #141414;
@@ -7,37 +8,46 @@ body {
 
 h1 {
     color: red;
-    font-size: 75px;
+    font-size: 100px;
     text-align: center;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
+
 }
 
-.serie-title{
+.serie-title {
     font-weight: bold;
     font-size: 30px;
 }
 
-/* .class-collectioUl{
+.class-collectioUl {
     display: flex;
     flex-direction: column;
-    columns: 2;
-} */
-.serie-li{
-    border: solid 1px;
-
-    display: flex;
-    flex-direction: column;
-
-    max-width: 400px;
-    padding: 20px;
-    margin:auto
+    justify-content: center;
 }
 
-.serie-upVotes-btn, .serie-downVotes-btn{
-    /* border: solid 1px red; */
+.serie-li {
+    border: solid 1px;
+    border-radius: 3px;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    overflow: auto;
+
+}
+
+.serie-upVotes-btn,
+.serie-downVotes-btn {
+    border: solid 1px white;
     max-width: max-content;
 
+    background-color: #141414;
     font-size: 20px;
     margin: 7px;
+    border-radius: 20px;
 
 }

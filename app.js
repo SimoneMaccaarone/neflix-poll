@@ -1,4 +1,4 @@
-let collectionSeries = new Collection('NETFLIX Poll');
+let collectionSeries = new Collection('NETFLIX');
 
 displaySeries();    // display => la funzione che mostra tutto
 
@@ -12,13 +12,13 @@ function fillSerieArrayFromServer(data) {
     for (let i = 0; i < data.length; i++) {
         const object = data[i];
 
-        const serie = new Serie(object.title, object.creator, object.seasons, object.isComplete, object.upVotes, object.downVotes, object.id);
+        const serie = new Serie(object.title, object.creator, object.seasons, object.isComplete, object.upVotes, object.downVotes, object.imageURL, object.id);
         collectionSeries.addSerie(serie);
     }
 }//▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 
-function displaySeries() {               //è globale quindi la vede
+function displaySeries() {               //è globale, quindi la vede
     console.log(collectionSeries);
 
     const collectioSeriesTitle = document.getElementById('collection-name');
@@ -26,23 +26,22 @@ function displaySeries() {               //è globale quindi la vede
     collectionSeriesUl.classList.add('class-collectioUl');
 
     const titleNode = document.createTextNode(collectionSeries.title);
-    collectioSeriesTitle.innerHTML = '';// pulisci tutto quello che ce dentro a list title
+    collectioSeriesTitle.innerHTML = '';        // pulisci tutto quello che ce dentro a list title
     collectioSeriesTitle.appendChild(titleNode);
-
 
     collectionSeriesUl.innerHTML = '';
 
     for (let i = 0; i < collectionSeries.serieArray.length; i++) {
         const serie = collectionSeries.serieArray[i];
 
-
         // creazione dell' elenco
 
         const newLi = document.createElement('li');
         newLi.classList.add('serie-li');
 
-
         //--------------------------------------------------------------------
+
+        createIMGOfSerie(serie);        //----------- IMG ----------
 
         createTitleOfSerie(serie);      //---------- TITLE ---------
 
@@ -52,7 +51,7 @@ function displaySeries() {               //è globale quindi la vede
 
         createIsCompleteOfSerie(serie); //------- ISCOMPLETE -------
 
-        createDivForVotes(serie);       //------- Div for Votes -------
+        createDivForVotes(serie);       //----- Div for Votes ------
 
         createUpVotesOfSerie(serie);    //-------- UP VOTES --------
 
@@ -62,12 +61,13 @@ function displaySeries() {               //è globale quindi la vede
 
         //--------- APPEND CHILD --------
 
+        newLi.append(createIMGOfSerie(serie));
         newLi.append(createTitleOfSerie(serie));
         newLi.append(createCreatorOfSerie(serie));
         newLi.append(createSeasonsOfSerie(serie));
         newLi.append(createIsCompleteOfSerie(serie));
 
-        newLi.append(createDivForVotes(serie))
+        newLi.append(createDivForVotes(serie));
         // newLi.append(createUpVotesOfSerie(serie));
         // newLi.append(createDownVotesOfSerie(serie));
 
@@ -75,6 +75,15 @@ function displaySeries() {               //è globale quindi la vede
     }
 }
 
+function createIMGOfSerie(serie){
+    const imgTagIMG = document.createElement('img');
+    imgTagIMG.classList.add('serie-img');
+
+    const imgTagIMGNode = document.createTextNode('src', serie.imageURL);
+    imgTagIMG.appendChild(imgTagIMGNode);
+
+    return imgTagIMG;
+}
 
 function createTitleOfSerie(serie) {
 
@@ -145,7 +154,7 @@ function createDownVotesOfSerie(serie) {
 }
 
 //---------- DIV For VOTES ---------------
-function createDivForVotes(serie){
+function createDivForVotes(serie) {
     const divForVotes = document.createElement('div');
     divForVotes.classList.add('div-ForVotes')
 
