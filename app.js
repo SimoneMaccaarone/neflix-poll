@@ -23,6 +23,7 @@ function displaySeries() {               //è globale quindi la vede
 
     const collectioSeriesTitle = document.getElementById('collection-name');
     const collectionSeriesUl = document.getElementById('collection-listUl');
+    collectionSeriesUl.classList.add('class-collectioUl');
 
     const titleNode = document.createTextNode(collectionSeries.title);
     collectioSeriesTitle.innerHTML = '';// pulisci tutto quello che ce dentro a list title
@@ -51,6 +52,8 @@ function displaySeries() {               //è globale quindi la vede
 
         createIsCompleteOfSerie(serie); //------- ISCOMPLETE -------
 
+        createDivForVotes(serie);       //------- Div for Votes -------
+
         createUpVotesOfSerie(serie);    //-------- UP VOTES --------
 
         createDownVotesOfSerie(serie);  //------- DOWN VOTES -------
@@ -63,8 +66,10 @@ function displaySeries() {               //è globale quindi la vede
         newLi.append(createCreatorOfSerie(serie));
         newLi.append(createSeasonsOfSerie(serie));
         newLi.append(createIsCompleteOfSerie(serie));
-        newLi.append(createUpVotesOfSerie(serie));
-        newLi.append(createDownVotesOfSerie(serie));
+
+        newLi.append(createDivForVotes(serie))
+        // newLi.append(createUpVotesOfSerie(serie));
+        // newLi.append(createDownVotesOfSerie(serie));
 
         collectionSeriesUl.appendChild(newLi);
     }
@@ -137,4 +142,15 @@ function createDownVotesOfSerie(serie) {
     downVotesButton.appendChild(downVotesNode);
 
     return downVotesButton;
+}
+
+//---------- DIV For VOTES ---------------
+function createDivForVotes(serie){
+    const divForVotes = document.createElement('div');
+    divForVotes.classList.add('div-ForVotes')
+
+    divForVotes.appendChild(createUpVotesOfSerie(serie));
+    divForVotes.appendChild(createDownVotesOfSerie(serie));
+
+    return divForVotes
 }

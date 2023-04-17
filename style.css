@@ -17,6 +17,11 @@ h1 {
     font-size: 30px;
 }
 
+/* .class-collectioUl{
+    display: flex;
+    flex-direction: column;
+    columns: 2;
+} */
 .serie-li{
     border: solid 1px;
 
@@ -29,5 +34,10 @@ h1 {
 }
 
 .serie-upVotes-btn, .serie-downVotes-btn{
+    /* border: solid 1px red; */
     max-width: max-content;
+
+    font-size: 20px;
+    margin: 7px;
+
 }
