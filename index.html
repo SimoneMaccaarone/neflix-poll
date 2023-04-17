@@ -14,10 +14,17 @@
         <!-- <center> <img class="netflixsvg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/799px-Netflix_2015_logo.svg.png?20190206123158" alt=""> </center> -->
 
         <!-- NOME DELLA COLLEZIONE -->
-        <h1 class="collection-name-class" id="collection-name"></h1>
+        <h1 class="collection-name-class" id="collection-name" onclick="window.location.reload()"></h1>
 
         <div class="div-order-btn">
+            <button class="btn-reset-filter" onclick="window.location.reload()">Reset fileter</button>
             <button class="btn-orderTitle" onclick="orderByTitle()"> Order by title </button>
+            <button class="btn-orderBest" onclick="orderByTitle()"> Order by best </button>
+            <button class="btn-byUpVote" onclick="orderByTitle()"> Order by Up votes </button>
+            <button class="btn-byDownVote" onclick="orderByTitle()"> Order by Down votes  </button>
+           
+
+
         </div>
 
         <ul id="collection-listUl"></ul> <!-- CREAZIONE DELLA LISTA COLLEZIONE -->

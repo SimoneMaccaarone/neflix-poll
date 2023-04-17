@@ -21,9 +21,6 @@ function fillSerieArrayFromServer(data) {
 function displaySeries() {               //è globale, quindi la vede
     console.log(collectionSeries);
 
-
-
-
     const collectioSeriesTitle = document.getElementById('collection-name');
     const collectionSeriesUl = document.getElementById('collection-listUl');
     collectionSeriesUl.classList.add('class-collectioUl');
@@ -171,3 +168,7 @@ function orderByTitle() {
     collectionSeries.sortByTitle();
     displaySeries();
 }
+
+// function resetFilter(){
+
+// }
