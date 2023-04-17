@@ -34,10 +34,14 @@ function displaySeries() {               //è globale quindi la vede
     for (let i = 0; i < collectionSeries.serieArray.length; i++) {
         const serie = collectionSeries.serieArray[i];
 
+
         // creazione dell' elenco
+
         const newLi = document.createElement('li');
         newLi.classList.add('serie-li');
 
+
+        //--------------------------------------------------------------------
 
         createTitleOfSerie(serie);      //---------- TITLE ---------
 
@@ -49,7 +53,7 @@ function displaySeries() {               //è globale quindi la vede
 
         createUpVotesOfSerie(serie);    //-------- UP VOTES --------
 
-        // createDownVotesOfSerie(serie);  //------- DOWN VOTES -------
+        createDownVotesOfSerie(serie);  //------- DOWN VOTES -------
 
 
 
@@ -82,7 +86,7 @@ function createCreatorOfSerie(serie) {
     const creatorSpan = document.createElement('span');
     creatorSpan.classList.add('serie-creator');
 
-    const creatorNode = document.createTextNode(serie.creator);
+    const creatorNode = document.createTextNode('Creator: ' + serie.creator);
     creatorSpan.appendChild(creatorNode);
 
     return creatorSpan;
@@ -92,37 +96,44 @@ function createSeasonsOfSerie(serie) {
     const seasonsSpan = document.createElement('span');
     seasonsSpan.classList.add('serie-seasons');
 
-    const seasonsNode = document.createTextNode(serie.seasons);
+    const seasonsNode = document.createTextNode('Seasons ' + serie.seasons);
     seasonsSpan.appendChild(seasonsNode);
 
     return seasonsSpan;
 }
 
 function createIsCompleteOfSerie(serie) {
+
     const isCompleteSpan = document.createElement('span');
     isCompleteSpan.classList.add('serie-isComplete');
 
+    // condizione isComplete -> true= Completed \ false= Not Completed
     const isCompleteNode = document.createTextNode(serie.isComplete);
+    if (serie.isComplete === true) {
+        serie.isComplete = 'Comleted';
+    } else {
+        serie.isComplete = 'Not Completed';
+    }
     isCompleteSpan.appendChild(isCompleteNode);
 
     return isCompleteSpan;
 }
 
-function createUpVotesOfSerie(serie){
+function createUpVotesOfSerie(serie) {
     const upVotesButton = document.createElement('button');
     upVotesButton.classList.add('serie-upVotes-btn')
-    
-    const upVotesNode= document.createTextNode('👍')
+
+    const upVotesNode = document.createTextNode('👍')
     upVotesButton.appendChild(upVotesNode);
 
     return upVotesButton;
 }
 
-function createDownVotesOfSerie(serie){
+function createDownVotesOfSerie(serie) {
     const downVotesButton = document.createElement('button');
     downVotesButton.classList.add('serie-downVotes-btn')
-    
-    const downVotesNode= document.createTextNode('👎')
+
+    const downVotesNode = document.createTextNode('👎')
     downVotesButton.appendChild(downVotesNode);
 
     return downVotesButton;

@@ -13,10 +13,21 @@ h1 {
 }
 
 .serie-title{
+    font-weight: bold;
     font-size: 30px;
 }
 
-/* .serie-li{
+.serie-li{
+    border: solid 1px;
 
+    display: flex;
+    flex-direction: column;
 
-} */
+    max-width: 400px;
+    padding: 20px;
+    margin:auto
+}
+
+.serie-upVotes-btn, .serie-downVotes-btn{
+    max-width: max-content;
+}
