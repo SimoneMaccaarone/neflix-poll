@@ -21,6 +21,9 @@ function fillSerieArrayFromServer(data) {
 function displaySeries() {               //è globale, quindi la vede
     console.log(collectionSeries);
 
+
+
+
     const collectioSeriesTitle = document.getElementById('collection-name');
     const collectionSeriesUl = document.getElementById('collection-listUl');
     collectionSeriesUl.classList.add('class-collectioUl');
@@ -72,13 +75,14 @@ function displaySeries() {               //è globale, quindi la vede
         // newLi.append(createDownVotesOfSerie(serie));
 
         collectionSeriesUl.appendChild(newLi);
+
     }
 }
 
-function createIMGOfSerie(serie){
+function createIMGOfSerie(serie) {
     const imgTagIMG = document.createElement('img');
     imgTagIMG.classList.add('serie-img');
-    imgTagIMG.src= serie.imageURL;
+    imgTagIMG.src = serie.imageURL;
 
     return imgTagIMG;
 }
@@ -108,7 +112,7 @@ function createSeasonsOfSerie(serie) {
     const seasonsSpan = document.createElement('span');
     seasonsSpan.classList.add('serie-seasons');
 
-    const seasonsNode = document.createTextNode('Seasons ' + serie.seasons);
+    const seasonsNode = document.createTextNode('Seasons: ' + serie.seasons);
     seasonsSpan.appendChild(seasonsNode);
 
     return seasonsSpan;
@@ -120,11 +124,11 @@ function createIsCompleteOfSerie(serie) {
     isCompleteSpan.classList.add('serie-isComplete');
 
     // condizione isComplete -> true= Completed \ false= Not Completed
-    const isCompleteNode = document.createTextNode(serie.isComplete);
+    const isCompleteNode = document.createTextNode('Status: ' + serie.isComplete);
     if (serie.isComplete === true) {
         serie.isComplete = 'Comleted';
     } else {
-        serie.isComplete = 'Not Completed';
+        serie.isComplete = 'In progress';
     }
     isCompleteSpan.appendChild(isCompleteNode);
 
@@ -151,7 +155,7 @@ function createDownVotesOfSerie(serie) {
     return downVotesButton;
 }
 
-//---------- DIV For VOTES ---------------
+//---------- DIV For VOTES ----------
 function createDivForVotes(serie) {
     const divForVotes = document.createElement('div');
     divForVotes.classList.add('div-ForVotes')
@@ -160,4 +164,10 @@ function createDivForVotes(serie) {
     divForVotes.appendChild(createDownVotesOfSerie(serie));
 
     return divForVotes
+}
+
+//---------- Order by Title ----------
+function orderByTitle() {
+    collectionSeries.sortByTitle();
+    displaySeries();
 }

@@ -2,27 +2,38 @@
 
 
 body {
-    background-color: #141414;
+    background-color: #050505;
     color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.netflixsvg{
+    width: 50vw;
+    padding: 50px;
 }
 
 h1 {
     display: flex;
     justify-content: center;
     color: red;
-    font-size: 100px;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    font-size: 150px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
 
 }
 
-.serie-title {
-    /* text-align: center; */
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.div-order-btn{
+    display: flex;
+    justify-content: center;
+}
 
+.btn-orderTitle{
+    border-radius: 7px;
+    width: 75px;
+    height: 75px;
 }
 
 .class-collectioUl {
@@ -31,17 +42,28 @@ h1 {
     justify-content: center;
 }
 
+.serie-title {
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+
 .serie-li {
-    
-    border: solid 1px;
-    border-radius: 3px;
+
+    /* border: solid 1px; */
+    background-color: #141414;
+    border-radius: 7px;
 
     display: flex;
     flex-direction: column;
     align-self: center;
     justify-content: center;
 
-    width: 300px;
+    width: 350px;
     padding: 20px;
     margin: 10px;
     overflow: auto;

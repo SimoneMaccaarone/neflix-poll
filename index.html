@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,33 @@
     <title>Netflix Poll of Simoneee</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="div-main" id="main">
-        <h1 class="collection-name-class" id="collection-name"></h1> <!-- NOME DELLA COLLEZIONE -->
+        <!-- <center> <img class="netflixsvg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/799px-Netflix_2015_logo.svg.png?20190206123158" alt=""> </center> -->
 
-        <ul id="collection-listUl"></ul>    <!-- CREAZIONE DELLA LISTA COLLEZIONE -->
+        <!-- NOME DELLA COLLEZIONE -->
+        <h1 class="collection-name-class" id="collection-name"></h1>
+
+        <div class="div-order-btn">
+            <button class="btn-orderTitle" onclick="orderByTitle()">Order by title </button>
+        </div>
+
+        <ul id="collection-listUl"></ul> <!-- CREAZIONE DELLA LISTA COLLEZIONE -->
 
 
 
     </div>
+
     <!-- ///Order By title
     ///Order by upVote
     ///Order By downVote
-    ///Order By Best -->
-    
+    ///Order By Best
+
+    netflix svg
+https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/799px-Netflix_2015_logo.svg.png?20190206123158
+-->
+
 </body>
 
 <script src="./services/data-service.js"></script>

@@ -23,4 +23,6 @@ class Collection {
         return newCollection;
     }
 
+    // bottoni per i like e dislike neeeeeeeddd
+
 }
