@@ -3,10 +3,9 @@
 body {
     background-color: #070707;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: end;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 /* .netflixsvg {
@@ -29,9 +28,9 @@ body {
 
 .div-order-btn {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
+    width: 100vw;
+    flex-direction:row;
+    justify-content:center;
 }
 
 .btn-orderTitle,
@@ -51,6 +50,7 @@ body {
     color: #fff;
     border-color: #fff;
 
+    margin: 20px;
     padding: 10px;
     font-family: 'Oswald', sans-serif;
 
@@ -69,6 +69,7 @@ body {
     color: #fff;
     border-color: #fff;
 
+    margin: 20px;
     padding: 10px;
     font-family: 'Oswald', sans-serif;
 }
@@ -78,6 +79,7 @@ body {
     flex-direction: column;
     justify-content: center;
     columns: 1;
+    margin: 20px;
 }
 
 .serie-li {
@@ -91,11 +93,9 @@ body {
     align-self: center;
     justify-content: center;
 
-
-    width: 500px;
+    width: 400px;
     padding: 20px;
-    margin: 10px;
-    overflow: auto;
+    margin: 20px;
 
 }
 
@@ -112,15 +112,20 @@ body {
     margin-bottom: 15px;
 }
 
+/* .serie-creator,
+.serie-seasons,
+.serie-complete{
+} */
+
 .serie-upVotes-btn,
 .serie-downVotes-btn {
+    width: 50px;
+    height: 50px;
     border: solid 1px white;
-    max-width: max-content;
-
     background-color: #141414;
     font-size: 20px;
     margin: 7px;
-    border-radius: 20px;
+    border-radius: 50px;
 
 }
 
@@ -144,18 +149,18 @@ body {
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .collection-name-class{
-        width: 50vw;
+        width: 30vw;
     }
     .div-order-btn{
-        width: 50vw;
+        width: 30vw;
     }
 
     .class-collectioUl{
-        width: 50vw;
+        width: 30vw;
     }
 
     .serie-li{
-        width: 50vw;
+        width: 30vw;
     }
 }
 
