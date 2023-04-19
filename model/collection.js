@@ -9,9 +9,7 @@ class Collection {
         this.serieArray.push(serie);
     }
 
-    sortByTitle() {
-        return this.serieArray.sort((serie1, serie2) => serie1.compareByTitle(serie2))
-    }
+    
 
     static fromObjectArray(title, objectArray) {
         const newCollection = new Collection(title);
@@ -23,6 +21,19 @@ class Collection {
         return newCollection;
     }
 
-    // bottoni per i like e dislike neeeeeeeddd
+    sortCollectionByTitle() {
+        return this.serieArray.sort((serie1, serie2) => serie1.compareByTitle(serie2))
+    }
 
+    sortByUpVotes(){
+
+    }
+
+    sortByDownVotes(){
+
+    }
+
+    sortByRating(){
+        
+    }
 }

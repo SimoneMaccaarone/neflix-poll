@@ -137,7 +137,7 @@ function createUpVotesOfSerie(serie) {
     upVotesButton.addEventListener('click', (event) => counterUpVotesClicks(serie))
 
     upVotesButton.appendChild(upVotesNode);
-    
+
 
 
     return upVotesButton;
@@ -149,8 +149,11 @@ function createDownVotesOfSerie(serie) {
 
     const downVotesNode = document.createTextNode('👎');
 
+    // const counterCliks = document.createElement('p')
+    // const counterCliksText = document.createTextNode()
     downVotesButton.addEventListener('click', (event) => counterDownVotesClicks(serie))
 
+    // counterCliks.appendChild(counterCliksText);
     downVotesButton.appendChild(downVotesNode);
 
     return downVotesButton;
@@ -168,19 +171,18 @@ function createDivForVotes(serie) {
 }
 
 //------ COUNTER x UpVotes & DownVotes -----
-function counterUpVotesClicks(){
-    console.log('👍mi piace')
+function counterUpVotesClicks() {
+    
+    serie.upVotes+=1;
+    DataService.putSerie(serie).then(modificSerie => displaySeries())
 }
 
-function counterDownVotesClicks(){
-    console.log('👎non mi piace')
+function counterDownVotesClicks() {
+    serie.downVotes+=1;
+    DataService.putSerie(serie).then(modificSerie => displaySeries())
 }
 //---------- Order by Title ----------
 function orderByTitle() {
-    collectionSeries.sortByTitle();
+    collectionSeries.sortCollectionByTitle();
     displaySeries();
 }
-
-// function resetFilter(){
-
-// }

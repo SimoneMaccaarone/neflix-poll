@@ -26,18 +26,6 @@ body {
 
 }
 
-p{
-    display: flex;
-    justify-content: center;
-    color: red;
-    /* width: 100vw; */
-    /* height: 100vh; */
-    font-size: 50px;
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    /* font-family: 'Bebas Neue',sans-serif; */
-}
-
 .div-order-btn {
     display: flex;
     width: 100vw;
@@ -92,6 +80,7 @@ p{
     justify-content: center;
     columns: 1;
     margin: 20px;
+
 }
 
 .serie-li {
@@ -102,8 +91,11 @@ p{
 
     display: flex;
     flex-direction: column;
-    align-self: center;
+    /* align-self: center; */
     justify-content: center;
+    text-align: center;
+    align-self: center;
+
 
     width: 500px;
     height: 500px;
@@ -136,7 +128,7 @@ p{
 .serie-downVotes-btn {
     width: 50px;
     height: 50px;
-    border: solid 1px white;
+    /* border: solid 1px white;  */
     background-color: #141414;
     font-size: 20px;
     margin: 7px;
@@ -146,6 +138,10 @@ p{
 
 
 @media screen and (max-width: 320px) and (min-width: 480px) {
+    body{
+    align-self: center;
+
+    }
     .collection-name-class{
         width: 25vw;
     }
