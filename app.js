@@ -34,8 +34,8 @@ function displaySeries() {               //è globale, quindi la vede
     for (let i = 0; i < collectionSeries.serieArray.length; i++) {
         const serie = collectionSeries.serieArray[i];
 
-        // creazione dell' elenco
 
+        // ------ Creazione dell' elenco ------
         const newLi = document.createElement('li');
         newLi.classList.add('serie-li');
 
@@ -56,8 +56,6 @@ function displaySeries() {               //è globale, quindi la vede
         createUpVotesOfSerie(serie);    //-------- UP VOTES --------
 
         createDownVotesOfSerie(serie);  //------- DOWN VOTES -------
-
-
 
         //--------- APPEND CHILD --------
 
