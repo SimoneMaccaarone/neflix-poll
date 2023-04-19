@@ -64,16 +64,14 @@ function displaySeries() {               //è globale, quindi la vede
         newLi.append(createCreatorOfSerie(serie));
         newLi.append(createSeasonsOfSerie(serie));
         newLi.append(createIsCompleteOfSerie(serie));
-
-        newLi.append(createDivForVotes(serie));
-        // newLi.append(createUpVotesOfSerie(serie));
-        // newLi.append(createDownVotesOfSerie(serie));
+        newLi.append(createDivForVotes(serie)); // newLi.append(createUpVotesOfSerie(serie)); // newLi.append(createDownVotesOfSerie(serie));
 
         collectionSeriesUl.appendChild(newLi);
 
     }
 }
 
+//----------- FUNCTION x SERIE ----------
 function createIMGOfSerie(serie) {
     const imgTagIMG = document.createElement('img');
     imgTagIMG.classList.add('serie-img');
@@ -132,9 +130,9 @@ function createIsCompleteOfSerie(serie) {
 
 function createUpVotesOfSerie(serie) {
     const upVotesButton = document.createElement('button');
-    upVotesButton.classList.add('serie-upVotes-btn')
+    upVotesButton.classList.add('serie-upVotes-btn');
 
-    const upVotesNode = document.createTextNode('👍')
+    const upVotesNode = document.createTextNode('👍');
     upVotesButton.appendChild(upVotesNode);
 
     return upVotesButton;
@@ -142,9 +140,9 @@ function createUpVotesOfSerie(serie) {
 
 function createDownVotesOfSerie(serie) {
     const downVotesButton = document.createElement('button');
-    downVotesButton.classList.add('serie-downVotes-btn')
+    downVotesButton.classList.add('serie-downVotes-btn');
 
-    const downVotesNode = document.createTextNode('👎')
+    const downVotesNode = document.createTextNode('👎');
     downVotesButton.appendChild(downVotesNode);
 
     return downVotesButton;
@@ -161,6 +159,14 @@ function createDivForVotes(serie) {
     return divForVotes
 }
 
+//------ COUNTER x UpVotes & DownVotes -----
+// function counterUpVotesClicks(){
+
+// }
+
+// function counterDownVotesClicks(){
+
+// }
 //---------- Order by Title ----------
 function orderByTitle() {
     collectionSeries.sortByTitle();

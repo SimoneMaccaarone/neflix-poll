@@ -101,7 +101,8 @@ body {
 
 .serie-img {
     border-radius: 3px;
-    overflow: auto;
+    max-height: 300px;
+    overflow: hidden;
 }
 
 .serie-title {
@@ -130,7 +131,7 @@ body {
 }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 320px) and (min-width: 480px) {
     .collection-name-class{
         width: 25vw;
     }
@@ -164,7 +165,7 @@ body {
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 800px) {
     .collection-name-cla5{
         width: 75vw;
     }

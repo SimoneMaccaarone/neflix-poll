@@ -10,37 +10,42 @@ class Serie {
         this.imageURL = imageURL;
         this.id = id;
 
+        if(id !== undefined) {
+            this.id = id;
+        }
     }
 
-    // set creationUpvotes(newUpVotes){
+    
 
-    // }
+// set creationUpvotes(newUpVotes){
 
-    // set creationDownvotes(newDownVotes){
+// }
 
-    // }
+// set creationDownvotes(newDownVotes){
 
-    compareByTitle(serie2) {
-        return this.title.localeCompare(serie2.title);
-    }
+// }
+
+compareByTitle(serie2) {
+    return this.title.localeCompare(serie2.title);
+}
 
     static fromSerieObject(serieObject) {
-        return new Serie(serieObject.title, serieObject.creator, serieObject.seasons, serieObject.isComplete, serieObject.upVotes, serieObject.downVotes, serieObject.imageURL, serieObject.id);
+    return new Serie(serieObject.title, serieObject.creator, serieObject.seasons, serieObject.isComplete, serieObject.upVotes, serieObject.downVotes, serieObject.imageURL, serieObject.id);
+}
+
+
+
+toDbModel() {
+    const dbModel = {
+        title: this.title,
+        creator: this.creator,
+        seasons: this.seasons,
+        isComplete: this.isComplete,
+        upVotes: this.upVotes,
+        downVotes: this.downVotes,
+        imageURL: this.imageURL,
+        id: this.id
     }
-
-
-
-    toDbModel() {
-        const dbModel = {
-            title: this.title,
-            creator: this.creator,
-            seasons: this.seasons,
-            isComplete: this.isComplete,
-            upVotes: this.upVotes,
-            downVotes: this.downVotes,
-            imageURL: this.imageURL,
-            id: this.id
-        }
-        return dbModel;
-    }
+    return dbModel;
+}
 }
