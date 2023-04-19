@@ -71,7 +71,7 @@ function displaySeries() {               //è globale, quindi la vede
     }
 }
 
-//----------- FUNCTION x SERIE ----------
+//---------- FUNCTION x SERIE ----------
 function createIMGOfSerie(serie) {
     const imgTagIMG = document.createElement('img');
     imgTagIMG.classList.add('serie-img');
@@ -127,14 +127,15 @@ function createIsCompleteOfSerie(serie) {
 
     return isCompleteSpan;
 }
-
+            // Up & Down Votes
 function createUpVotesOfSerie(serie) {
+
     const upVotesButton = document.createElement('button');
     upVotesButton.classList.add('serie-upVotes-btn');
-
+    
     const upVotesNode = document.createTextNode('👍');
+    upVotesButton.addEventListener('click', (event) => counterUpVotesClicks())
 
-    upVotesButton.addEventListener('click', (event) => counterUpVotesClicks(serie))
 
     upVotesButton.appendChild(upVotesNode);
 
@@ -174,15 +175,31 @@ function createDivForVotes(serie) {
 function counterUpVotesClicks() {
     
     serie.upVotes+=1;
-    DataService.putSerie(serie).then(modificSerie => displaySeries())
+    DataService.putSerie(serie).then(modificSerie => displaySeries());
 }
 
 function counterDownVotesClicks() {
     serie.downVotes+=1;
     DataService.putSerie(serie).then(modificSerie => displaySeries())
 }
-//---------- Order by Title ----------
+//---------- Order by ... ----------
+//            Title
 function orderByTitle() {
     collectionSeries.sortCollectionByTitle();
+    displaySeries();
+}
+
+function orderByUpVotes(){
+    collectionSeries.sortByUpVotes();
+    displaySeries();
+}
+
+function orderByDownVotes(){
+    collectionSeries.sortByUpVotes();
+    displaySeries();
+}
+
+function orderByRating(){
+    collectionSeries.sortByRating();
     displaySeries();
 }

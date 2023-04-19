@@ -22,7 +22,7 @@ class Collection {
     }
 
     sortCollectionByTitle() {
-        return this.serieArray.sort((serie1, serie2) => serie1.compareByTitle(serie2))
+        this.serieArray.sort((serie1, serie2) => serie1.compareByTitle(serie2))
     }
 
     sortByUpVotes(){
