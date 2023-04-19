@@ -133,7 +133,12 @@ function createUpVotesOfSerie(serie) {
     upVotesButton.classList.add('serie-upVotes-btn');
 
     const upVotesNode = document.createTextNode('👍');
+
+    upVotesButton.addEventListener('click', (event) => counterUpVotesClicks(serie))
+
     upVotesButton.appendChild(upVotesNode);
+    
+
 
     return upVotesButton;
 }
@@ -143,6 +148,9 @@ function createDownVotesOfSerie(serie) {
     downVotesButton.classList.add('serie-downVotes-btn');
 
     const downVotesNode = document.createTextNode('👎');
+
+    downVotesButton.addEventListener('click', (event) => counterDownVotesClicks(serie))
+
     downVotesButton.appendChild(downVotesNode);
 
     return downVotesButton;
@@ -160,13 +168,13 @@ function createDivForVotes(serie) {
 }
 
 //------ COUNTER x UpVotes & DownVotes -----
-// function counterUpVotesClicks(){
+function counterUpVotesClicks(){
+    console.log('👍mi piace')
+}
 
-// }
-
-// function counterDownVotesClicks(){
-
-// }
+function counterDownVotesClicks(){
+    console.log('👎non mi piace')
+}
 //---------- Order by Title ----------
 function orderByTitle() {
     collectionSeries.sortByTitle();

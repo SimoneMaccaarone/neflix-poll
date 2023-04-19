@@ -26,6 +26,18 @@ body {
 
 }
 
+p{
+    display: flex;
+    justify-content: center;
+    color: red;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Bebas Neue',sans-serif; */
+}
+
 .div-order-btn {
     display: flex;
     width: 100vw;
@@ -93,7 +105,8 @@ body {
     align-self: center;
     justify-content: center;
 
-    width: 400px;
+    width: 500px;
+    height: 500px;
     padding: 20px;
     margin: 20px;
 
@@ -103,6 +116,7 @@ body {
     border-radius: 3px;
     max-height: 300px;
     overflow: hidden;
+    /* object-fit: contain; */
 }
 
 .serie-title {
