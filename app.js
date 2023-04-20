@@ -171,13 +171,13 @@ function createDivForVotes(serie) {
 }
 
 //------ COUNTER x UpVotes & DownVotes -----
-function counterUpVotesClicks() {
+function counterUpVotesClicks(serie) {
     
     serie.upVotes+=1;
     DataService.putSerie(serie).then(modificSerie => displaySeries());
 }
 
-function counterDownVotesClicks() {
+function counterDownVotesClicks(serie) {
     serie.downVotes+=1;
     DataService.putSerie(serie).then(modificSerie => displaySeries())
 }
