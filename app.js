@@ -134,11 +134,10 @@ function createUpVotesOfSerie(serie) {
     upVotesButton.classList.add('serie-upVotes-btn');
     
     const upVotesNode = document.createTextNode('👍');
-    upVotesButton.addEventListener('click', (event) => counterUpVotesClicks())
+    upVotesButton.addEventListener('click', (event) => counterUpVotesClicks(serie))
 
 
     upVotesButton.appendChild(upVotesNode);
-
 
 
     return upVotesButton;
