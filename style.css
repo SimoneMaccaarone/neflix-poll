@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Oswald:wght@700&family=Poppins:wght@700&family=Roboto:wght@700;900&display=swap');
 
 body {
+    margin: 20px;
     background-color: #070707;
     color: #fff;
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
 }
-
-/* .netflixsvg {
-    width: 50vw;
-    padding: 50px;
-} */
+.loading-icon{
+    width: 200px;
+    /* display: none; */
+}
 
 .collection-name-class{
     display: flex;
@@ -135,18 +135,21 @@ body {
     border-radius: 50px;
 
 }
+.container-newserie{
+    display: flex;
+    justify-content: center;
+}
 
 
 @media screen and (max-width: 320px) and (min-width: 480px) {
     body{
     align-self: center;
-
     }
     .collection-name-class{
-        width: 25vw;
+        width: 50vw;
     }
     .div-order-btn{
-        width: 25vw;
+        width: 50vw;
     }
 
     .class-collectioUl{
@@ -157,26 +160,33 @@ body {
         width: 50vw;
     }
 }
+
+/* @media screen and (min-width: 481px) and (max-width: 768px) {
+    body{
+        justify-content: center;
+        align-self: center;
+    }
+    .collection-name-class{
+        width: 30vw;
+    }
+    .div-order-btn{
+        width: 30vw;
+    }
+
+    .class-collectioUl{
+        width: 30vw;
+    }
+
+    .serie-li{
+        width: 30vw;
+    }
+} */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
+    body{
+        align-self: center;
+    }
     .collection-name-class{
-        width: 30vw;
-    }
-    .div-order-btn{
-        width: 30vw;
-    }
-
-    .class-collectioUl{
-        width: 30vw;
-    }
-
-    .serie-li{
-        width: 30vw;
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 800px) {
-    .collection-name-cla5{
         width: 75vw;
     }
     .div-order-btn{
@@ -191,20 +201,23 @@ body {
         width: 75vw;
     }
 }
-@media screen and (min-width: 1920px) and (max-width: 1080px) {
-    .collection-name-cla5{
-        width: 100vw;
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body{
+        align-self: center;
+    }
+    .collection-name-class{
+        width: 50vw;
     }
     .div-order-btn{
-        width: 100vw;
+        width: 50vw;
     }
 
     .class-collectioUl{
-        width: 100vw;
+        width: 50vw;
     }
 
     .serie-li{
-        width: 100vw;
+        width: 50vw;
     }
 }
 

@@ -6,6 +6,15 @@ displaySeries();    // display => la funzione che mostra tutto
 DataService.getSerie().then(data => {
     fillSerieArrayFromServer(data);
     displaySeries();
+    stopLoading();
+}).catch(err => {
+    // const errorMessage = document.getElementById('error-message');
+
+    // const errorNode = document.createTextNode('accidenti, si è verificato un errore');
+
+    // errorMessage.appendChild(errorNode);
+    displayErrorMessage('accidenti, si è verificato un errore' + err.message);
+    stopLoading();
 })
 
 function fillSerieArrayFromServer(data) {
@@ -127,12 +136,12 @@ function createIsCompleteOfSerie(serie) {
 
     return isCompleteSpan;
 }
-            // Up & Down Votes
+// Up & Down Votes
 function createUpVotesOfSerie(serie) {
 
     const upVotesButton = document.createElement('button');
     upVotesButton.classList.add('serie-upVotes-btn');
-    
+
     const upVotesNode = document.createTextNode('👍');
     upVotesButton.addEventListener('click', (event) => counterUpVotesClicks(serie))
 
@@ -172,14 +181,23 @@ function createDivForVotes(serie) {
 
 //------ COUNTER x UpVotes & DownVotes -----
 function counterUpVotesClicks(serie) {
-    
-    serie.upVotes+=1;
-    DataService.putSerie(serie).then(modificSerie => displaySeries());
+
+    serie.upVotes += 1;
+    DataService.putSerie(serie)
+        .then(modificSerie => displaySeries())
+
+        .catch(error => {
+            displayErrorMessage('Accidenti!, in questo momento non puoi votare');
+        });
 }
 
 function counterDownVotesClicks(serie) {
-    serie.downVotes+=1;
-    DataService.putSerie(serie).then(modificSerie => displaySeries())
+    serie.downVotes += 1;
+    DataService.putSerie(serie).
+        then(modificSerie => displaySeries())
+        .catch(error => {
+            displayErrorMessage('Accidenti!, in questo momento non puoi votare');
+        });
 }
 //---------- Order by ... ----------
 //            Title
@@ -188,17 +206,59 @@ function orderByTitle() {
     displaySeries();
 }
 
-function orderByUpVotes(){
+function orderByUpVotes() {
     collectionSeries.sortByUpVotes();
     displaySeries();
 }
 
-function orderByDownVotes(){
+function orderByDownVotes() {
     collectionSeries.sortByUpVotes();
     displaySeries();
 }
 
-function orderByRating(){
+function orderByRating() {
     collectionSeries.sortByRating();
     displaySeries();
+}
+
+//---------- Function for newSerie ----------
+function saveNewSerie() {
+    const titleInput = document.getElementById('title-input');
+    const creatorInput = document.getElementById('creator-input');
+
+    const newSerieTitle = titleInput.value;
+    const newSerieCreator = creatorInput.value;
+
+    const newSerie = new Serie(newSerieTitle, newSerieCreator);
+
+    console.log(newSerie);
+
+    DataService.postSerie(newSerie)
+    .then(savedSerie => {
+        stopLoading();
+        newSerie.id = savedSerie.id;
+        collectionSeries.addSerie(newSerie);
+        displaySeries();
+    })
+        startLoading()
+        .catch(err => displayErrorMessage('Accidenti!, non puoi salvare'));
+    // collectionSeries.addSerie(newSerie);
+
+    // displaySeries();
+}
+
+function displayErrorMessage() {
+    const errorMessage = document.getElementById('error-message');
+    const errorNode = document.createTextNode(message);
+    errorMessage.appendChild(errorNode);
+}
+
+function startLoading() {
+    const loadingIcon = document.getElementById('loading-icon');
+    loadingIcon.style.display = 'inline-block';
+}
+
+function stopLoading() {
+    const loadingIcon = document.getElementById('loading-icon');
+    loadingIcon.style.display = 'none';
 }
