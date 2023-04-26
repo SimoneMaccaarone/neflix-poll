@@ -21,7 +21,7 @@ function fillSerieArrayFromServer(data) {
     for (let i = 0; i < data.length; i++) {
         const object = data[i];
 
-        const serie = new Serie(object.title, object.creator, object.seasons, object.isComplete, object.upVotes, object.downVotes, object.imageURL, object.id);
+        const serie = new Serie(object.title, object.creator, object.seasons, object.isComplete, object.upVotes, object.downVotes, object.imgURL, object.id);
         collectionSeries.addSerie(serie);
     }
 }//▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -84,7 +84,7 @@ function displaySeries() {               //è globale, quindi la vede
 function createIMGOfSerie(serie) {
     const imgTagIMG = document.createElement('img');
     imgTagIMG.classList.add('serie-img');
-    imgTagIMG.src = serie.imageURL;
+    imgTagIMG.src = serie.imgURL;
 
     return imgTagIMG;
 }
@@ -185,8 +185,12 @@ function createDivForVotes(serie) {
 function counterUpVotesClicks(serie) {
 
     serie.upVotes += 1;
+    startLoading();
     DataService.putSerie(serie)
-        .then(modificSerie => displaySeries())
+        .then(modififiedSerie => {
+            startLoading();
+            displaySeries();
+        })
 
         .catch(error => {
             displayErrorMessage('Accidenti!, in questo momento non puoi votare');
@@ -194,55 +198,69 @@ function counterUpVotesClicks(serie) {
 }
 
 function counterDownVotesClicks(serie) {
+
     serie.downVotes += 1;
-    DataService.putSerie(serie).
-        then(modificSerie => displaySeries())
+    
+    startLoading();
+    DataService.putSerie(serie)
+        .then(modififiedSerie => {
+            startLoading();
+            displaySeries();
+        })
         .catch(error => {
             displayErrorMessage('Accidenti!, in questo momento non puoi votare');
         });
 }
 //---------- Order by ... ----------
 //            Title
-function orderByTitle() {
-    collectionSeries.sortCollectionByTitle();
+function sortCollectionByTitle() {
+    collectionSeries.sortByTitle();
     displaySeries();
 }
 
-function orderByUpVotes() {
+function sortCollectionByUpVotes() {
     collectionSeries.sortByUpVotes();
     displaySeries();
 }
 
-function orderByDownVotes() {
-    collectionSeries.sortByUpVotes();
+function sortCollectionByDownVotes() {
+    collectionSeries.sortByDownVotes();
     displaySeries();
 }
 
-function orderByRating() {
+function sortCollectionByRating() {
     collectionSeries.sortByRating();
     displaySeries();
 }
 
 //---------- Function for newSerie ----------
 function saveNewSerie() {
+    const imgURLInput = document.getElementById('img-input');
     const titleInput = document.getElementById('title-input');
     const creatorInput = document.getElementById('creator-input');
+    const seasonsInput = document.getElementById('seasons-input');
+    const isCompleteInput = document.getElementById('isComplete-input');
 
     const newSerieTitle = titleInput.value;
     const newSerieCreator = creatorInput.value;
+    const newSerieSeasons = seasonsInput.value;
+    const newSerieIsComplete = isCompleteInput.value;
+    const newUpVotes = 0;
+    const newDownVotes = 0;
+    const newSerieImgUrl = imgURLInput.value;
 
-    const newSerie = new Serie(newSerieTitle, newSerieCreator);
+    const newSerie = new Serie(newSerieTitle, newSerieCreator, newSerieSeasons, newSerieIsComplete, newUpVotes, newDownVotes, newSerieImgUrl);
 
     console.log(newSerie);
 
     DataService.postSerie(newSerie)
-    .then(savedSerie => {
-        stopLoading();
-        newSerie.id = savedSerie.id;
-        collectionSeries.addSerie(newSerie);
-        displaySeries();
-    })
-        startLoading()
+        .then(savedSerie => {
+            stopLoading();
+            newSerie.id = savedSerie.id;
+            collectionSeries.addSerie(newSerie);
+            displaySeries();
+        })
+    startLoading()
         .catch(err => displayErrorMessage('Accidenti!, non puoi salvare'));
     // collectionSeries.addSerie(newSerie);
 

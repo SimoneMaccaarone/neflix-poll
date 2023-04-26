@@ -12,17 +12,18 @@
 <body>
     <div class="div-main" id="main">
         <img class="loading-icon" id="loading-icon" src="./assets/loadingpizzaSUPREMA.gif" alt="loading pizza">
+
         <!-- NOME DELLA COLLEZIONE -->
         <h1 class="collection-name-class" id="collection-name" onclick="window.location.reload()"></h1>
 
         <!-- BUTTON ORDER -->
         <div class="div-order-btn">
 
-            <button class="btn-reset-filter" onclick="window.location.reload()">Reset fileter</button>
-            <button class="btn-orderTitle" onclick="orderByTitle()"> Order by title </button>
-            <button class="btn-orderBest" onclick="orderByTitle()"> Order by best </button>
-            <button class="btn-byUpVote" onclick="orderByTitle()"> Order by Up votes </button>
-            <button class="btn-byDownVote" onclick="orderByTitle()"> Order by Down votes </button>
+            <!-- <button class="btn-reset-filter" onclick="displaySerie()">Reset fileter</button> -->
+            <button class="btn-orderTitle" onclick="sortCollectionByTitle()"> Order by title </button>
+            <button class="btn-orderBest" onclick="sortCollectionByRating()"> Order by best </button>
+            <button class="btn-byUpVote" onclick="sortCollectionByUpVotes()"> Order by Up votes </button>
+            <button class="btn-byDownVote" onclick="sortCollectionByDownVotes()"> Order by Down votes </button>
 
         </div>
 
@@ -34,11 +35,11 @@
     </div>
     <!----- INSERIMENTO NEW SERIE ----->
     <div class="container-newserie">
-        <span> Insert Img </span><input type="url" id="img-input">
         <span> Insert Title </span><input type="text" id="title-input">
         <span> Insert Creator </span><input type="text" id="creator-input">
         <span> Insert Seasons </span><input type="text" id="seasons-input">
         <span> Insert Status </span><input type="text" id="isComplete-input">
+        <span> Insert Img </span><input type="text" id="img-input">
 
         <button onclick="saveNewSerie()">Save</button>
     </div>

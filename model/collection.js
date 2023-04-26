@@ -9,7 +9,7 @@ class Collection {
         this.serieArray.push(serie);
     }
 
-    
+
 
     static fromObjectArray(title, objectArray) {
         const newCollection = new Collection(title);
@@ -21,19 +21,19 @@ class Collection {
         return newCollection;
     }
 
-    sortCollectionByTitle() {
-        this.serieArray.sort((serie1, serie2) => serie1.compareByTitle(serie2))
+    sortByTitle() {
+        this.serieArray.sort((serie1, serie2) => serie1.title.localeCompare(serie2.title));
     }
 
-    sortByUpVotes(){
-
+    sortByUpVotes() {
+        this.serieArray.sort((serie1, serie2) => serie2.upVotes - serie1.upVotes);
     }
 
-    sortByDownVotes(){
-
+    sortByDownVotes() {
+        this.serieArray.sort((serie1, serie2) => serie2.downVotes - serie1.downVotes);
     }
 
-    sortByRating(){
-        
+    sortByRating() {
+        this.serieArray.sort((serie1, serie2) => serie1.compareByRating(serie2));
     }
 }
