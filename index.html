@@ -15,6 +15,7 @@
         <!-- NOME DELLA COLLEZIONE -->
         <h1 class="collection-name-class" id="collection-name" onclick="window.location.reload()"></h1>
 
+        <!-- BUTTON ORDER -->
         <div class="div-order-btn">
 
             <button class="btn-reset-filter" onclick="window.location.reload()">Reset fileter</button>
@@ -31,19 +32,21 @@
         <div id="series-container"></div>
 
     </div>
+    <!----- INSERIMENTO NEW SERIE ----->
     <div class="container-newserie">
-        <span> Insert Title</span>
-        <input type="text" id="title-input">
-        <span> Insert creator</span>
-        <input type="text" id="creator-input">
+        <span> Insert Img </span><input type="url" id="img-input">
+        <span> Insert Title </span><input type="text" id="title-input">
+        <span> Insert Creator </span><input type="text" id="creator-input">
+        <span> Insert Seasons </span><input type="text" id="seasons-input">
+        <span> Insert Status </span><input type="text" id="isComplete-input">
+
         <button onclick="saveNewSerie()">Save</button>
     </div>
-</body>
 
+</body>
 <script src="./services/data-service.js"></script>
 <script src="./model/serie.js"></script>
 <script src="./model/collection.js"></script>
 <script src="./app.js"></script>
-
 
 </html>

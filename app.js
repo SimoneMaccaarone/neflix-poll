@@ -136,6 +136,7 @@ function createIsCompleteOfSerie(serie) {
 
     return isCompleteSpan;
 }
+//--------------------------------------
 // Up & Down Votes
 function createUpVotesOfSerie(serie) {
 
@@ -167,6 +168,7 @@ function createDownVotesOfSerie(serie) {
 
     return downVotesButton;
 }
+//--------------------------------------
 
 //---------- DIV For VOTES ----------
 function createDivForVotes(serie) {

@@ -119,11 +119,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* .serie-creator,
-.serie-seasons,
-.serie-complete{
-} */
-
 .serie-upVotes-btn,
 .serie-downVotes-btn {
     width: 50px;
@@ -137,89 +132,53 @@ body {
 }
 .container-newserie{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
-@media screen and (max-width: 320px) and (min-width: 480px) {
-    body{
-    align-self: center;
+@media screen and (min-width: 100px) and (max-width: 480px) {
+    body,*{
+        width: 100vw;
+        align-items: center;
     }
     .collection-name-class{
-        width: 50vw;
+        
+        align-items: center;
     }
-    .div-order-btn{
-        width: 50vw;
-    }
-
-    .class-collectioUl{
-        width: 50vw;
-    }
-
     .serie-li{
-        width: 50vw;
+        width: 100vw;
+        align-items: center;
+        /* align-content: center; */
+
     }
 }
-
-/* @media screen and (min-width: 481px) and (max-width: 768px) {
-    body{
-        justify-content: center;
-        align-self: center;
-    }
-    .collection-name-class{
-        width: 30vw;
-    }
-    .div-order-btn{
-        width: 30vw;
-    }
-
-    .class-collectioUl{
-        width: 30vw;
-    }
-
-    .serie-li{
-        width: 30vw;
-    }
-} */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    body{
-        align-self: center;
+    body,*{
+        width: 100vw;
+        align-items: center;
     }
     .collection-name-class{
-        width: 75vw;
+        
+        align-items: center;
     }
-    .div-order-btn{
-        width: 75vw;
+    .serie-img{
+        width: 80vw;
     }
-
-    .class-collectioUl{
-        width: 75vw;
-    }
-
     .serie-li{
-        width: 75vw;
+        width: 100vw;
+        align-items: center;
+        /* align-content: center; */
+
     }
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    body{
-        align-self: center;
+/* @media screen and (min-width: 769px) and (max-width: 1024px) {
+    body,*{
+        width: 100vw;
+        align-items: center;
     }
-    .collection-name-class{
-        width: 50vw;
-    }
-    .div-order-btn{
-        width: 50vw;
-    }
-
-    .class-collectioUl{
-        width: 50vw;
-    }
-
-    .serie-li{
-        width: 50vw;
-    }
-}
+} */
 
 /* 320px — 480px: Mobile devices
 481px — 768px: iPads, Tablets

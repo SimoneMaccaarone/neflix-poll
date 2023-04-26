@@ -28,12 +28,9 @@ class Serie {
 compareByTitle(serie2) {
     return this.title.localeCompare(serie2.title);
 }
-
     static fromSerieObject(serieObject) {
     return new Serie(serieObject.title, serieObject.creator, serieObject.seasons, serieObject.isComplete, serieObject.upVotes, serieObject.downVotes, serieObject.imageURL, serieObject.id);
 }
-
-
 
 toDbModel() {
     const dbModel = {
