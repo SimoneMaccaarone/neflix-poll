@@ -126,12 +126,14 @@ function createIsCompleteOfSerie(serie) {
     isCompleteSpan.classList.add('serie-isComplete');
 
     // condizione isComplete -> true= Completed \ false= Not Completed
-    const isCompleteNode = document.createTextNode('Status: ' + serie.isComplete);
+    let completeString ;
     if (serie.isComplete === true) {
-        serie.isComplete = 'Comleted';
+        completeString = 'Comleted';
     } else {
-        serie.isComplete = 'In progress';
+        completeString = 'In progress';
     }
+    const isCompleteNode = document.createTextNode('Status: ' + completeString);
+
     isCompleteSpan.appendChild(isCompleteNode);
 
     return isCompleteSpan;
