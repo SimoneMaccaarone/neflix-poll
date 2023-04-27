@@ -10,11 +10,14 @@
 </head>
 
 <body>
+
     <div class="div-main" id="main">
         <img class="loading-icon" id="loading-icon" src="./assets/loadingpizzaSUPREMA.gif" alt="loading pizza">
 
         <!-- NOME DELLA COLLEZIONE -->
-        <h1 class="collection-name-class" id="collection-name" onclick="window.location.reload()"></h1>
+        <h1 class="collection-name-class" id="collection-name" onclick="window.location.reload()">
+            <img src="./assets/Netflix_2015_logo.svg.png" alt="">
+        </h1>
 
         <!-- BUTTON ORDER -->
         <div class="div-order-btn">
@@ -26,7 +29,6 @@
             <button class="btn-byDownVote" onclick="sortCollectionByDownVotes()"> Order by Down votes </button>
 
         </div>
-
         <ul id="collection-listUl"></ul> <!-- CREAZIONE DELLA LISTA COLLEZIONE -->
 
         <p id="error-message"></p>
@@ -35,11 +37,11 @@
     </div>
     <!----- INSERIMENTO NEW SERIE ----->
     <div class="container-newserie">
-        <span>  Title </span><input type="text" id="title-input">
-        <span>  Creator </span><input type="text" id="creator-input">
-        <span>  Seasons </span><input type="text" id="seasons-input">
-        <span>  Status: is completed? </span><input type="checkbox" id="isComplete-input">
-        <span>  Image </span><input type="text" id="img-input">
+        <span> Title </span><input type="text" id="title-input">
+        <span> Creator </span><input type="text" id="creator-input">
+        <span> Seasons </span><input type="text" id="seasons-input">
+        <span> Status: is completed? </span><input type="checkbox" id="isComplete-input">
+        <span> Image </span><input type="text" id="img-input">
 
         <button onclick="saveNewSerie()">Save</button>
     </div>

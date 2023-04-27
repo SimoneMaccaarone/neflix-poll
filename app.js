@@ -1,4 +1,4 @@
-let collectionSeries = new Collection('NETFLIX');
+let collectionSeries = new Collection('');
 
 displaySeries();    // display => la funzione che mostra tutto
 
@@ -35,7 +35,7 @@ function displaySeries() {               //è globale, quindi la vede
     collectionSeriesUl.classList.add('class-collectioUl');
 
     const titleNode = document.createTextNode(collectionSeries.title);
-    collectioSeriesTitle.innerHTML = '';        // pulisci tutto quello che ce dentro a list title
+    // collectioSeriesTitle.innerHTML = '';        // pulisci tutto quello che ce dentro a list title
     collectioSeriesTitle.appendChild(titleNode);
 
     collectionSeriesUl.innerHTML = '';

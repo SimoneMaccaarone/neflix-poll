@@ -14,13 +14,14 @@ body {
 }
 
 .collection-name-class{
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     color: red;
-    /* width: 100vw; */
-    /* height: 100vh; */
-    font-size: 150px;
+    width: 100vw;
+    /* font-size: 100px; */
     text-align: center;
+    align-content: center;
     font-family: 'Oswald', sans-serif;
     /* font-family: 'Bebas Neue',sans-serif; */
 
@@ -48,7 +49,7 @@ body {
     height: 75px;
     background-color: #070707;
     color: #fff;
-    border-color: #fff;
+    /* border-color: #fff; */
 
     margin: 20px;
     padding: 10px;
@@ -56,23 +57,6 @@ body {
 
 }
 
-.btn-reset-filter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
-    border-radius: 7px;
-    width: 75px;
-    height: 75px;
-    background-color: #070707;
-    color: #fff;
-    border-color: #fff;
-
-    margin: 20px;
-    padding: 10px;
-    font-family: 'Oswald', sans-serif;
-}
 
 .class-collectioUl {
     display: flex;
@@ -100,7 +84,7 @@ body {
     width: 500px;
     height: 500px;
     padding: 20px;
-    margin: 20px;
+    margin: 40px;
 
 }
 
@@ -137,7 +121,7 @@ body {
 }
 
 
-@media screen and (min-width: 100px) and (max-width: 480px) {
+/* @media screen and (min-width: 100px) and (max-width: 480px) {
     body,*{
         width: 100vw;
         align-items: center;
@@ -149,12 +133,12 @@ body {
     .serie-li{
         width: 100vw;
         align-items: center;
-        /* align-content: center; */
+   
 
     }
-}
+} */
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+/* @media screen and (min-width: 481px) and (max-width: 768px) {
     body,*{
         width: 100vw;
         align-items: center;
@@ -164,15 +148,15 @@ body {
         align-items: center;
     }
     .serie-img{
-        width: 80vw;
+        width: 100px;vw;
     }
     .serie-li{
         width: 100vw;
         align-items: center;
-        /* align-content: center; */
+
 
     }
-}
+} */
 /* @media screen and (min-width: 769px) and (max-width: 1024px) {
     body,*{
         width: 100vw;
